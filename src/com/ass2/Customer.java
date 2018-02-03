@@ -44,7 +44,7 @@ public class Customer {
     }
 
 
-    private boolean isSame(Customer other){
+    public boolean isSame(Customer other){
         if(this.getCustomerID() == other.getCustomerID()) return true;
         else return false;
     }
