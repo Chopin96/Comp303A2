@@ -6,6 +6,10 @@ public interface IBankAccount {
 
     void deposit(double amount);
 
+    void setAccountID(int accountID);
+
+    int getAccountID();
+
     void setBalance(double amount);
 
     double getBalance();

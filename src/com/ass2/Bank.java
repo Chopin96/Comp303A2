@@ -1,17 +1,27 @@
 package com.ass2;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Bank {
-    public static void main(String[] args){
-        System.out.println("hello world");
+    public static void main(String[] args) {
+        System.out.println("Welcome to the Bank");
 
-        Scanner scanner = new Scanner(System.in);
+        LinkedList<Customer> customerDatabase = new LinkedList<>();
 
-        int userInput = scanner.nextInt();
+        customerDatabase.add(new Customer("Xuan",1234,0));
 
-        if( userInput == 1) System.out.println("Create Customer Selected");
+        customerDatabase.get(0).createCheckingAccount(599,50000);
 
-        else if (userInput ==2) System.out.println("Create Bank Account Selected");
+        customerDatabase.get(0).createSavingAccount(589,10000);
+
+        customerDatabase.get(0).printAllAccounts();
+
+        customerDatabase.get(0).getAccountList().get(0).transferMoney(10,customerDatabase.get(0).getAccountList().get(1));
+
+        customerDatabase.get(0).printAllAccounts();
+
+
     }
+
 }
