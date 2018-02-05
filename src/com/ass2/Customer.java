@@ -1,9 +1,7 @@
 package com.ass2;
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class Customer {
     private  String name;
@@ -31,7 +29,6 @@ public class Customer {
         return this.discountPercentage;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
@@ -48,28 +45,24 @@ public class Customer {
 
         else System.out.println("Invalid discount percentage");
     }
-
-    public void createSavingAccount(int newAccountID,double initalBalance){
-        this.accountList.add(new SavingAccount(newAccountID,initalBalance,this));
+    //Add a saving account linked to the customer
+    public void createSavingAccount(int newAccountID,double initialBalance){
+        this.accountList.add(new SavingAccount(newAccountID,initialBalance,this));
     }
 
+    //Add a checking account linked to the customer
     public void createCheckingAccount(int newAccountID,double initialBalance){
         this.accountList.add(new CheckingAccount(newAccountID,initialBalance,this));
     }
 
-    public void addCheckingAccount(CheckingAccount checkingAccount){
-        this.accountList.add(checkingAccount);
-    }
-
-    public void addSavingAccount(SavingAccount savingAccount){
-        this.accountList.add(savingAccount);
-    }
 
     public LinkedList<IBankAccount> getAccountList() {
         return accountList;
     }
 
-    public void printAllAccounts(){
+    //Function printing all the accounts belonging to a customer, used for debugging.
+
+    /*public void printAllAccounts(){
         Iterator<IBankAccount> itr;
         itr = this.accountList.listIterator();
 
@@ -81,7 +74,7 @@ public class Customer {
 
 
         }
-    }
+    }*/
 
     //Function to verify whether two customers are the same.
     //Used during money transfer.
